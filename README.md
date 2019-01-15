@@ -1,45 +1,48 @@
 # 病毒木马防御与分析
 
+### [病毒包和工具包下载:Github](https://github.com/CasterWx/Killing-Of-Actual-Combat)
+
+| [总纲](https://github.com/CasterWx/Killing-Of-Actual-Combat/README.md) | [熊猫烧香](https://github.com/CasterWx/Killing-Of-Actual-Combat/XMSX.md) |
+| --------- | --------- |
+
 <ul>
-<li><a href="#%E7%97%85%E6%AF%92%E6%9C%A8%E9%A9%AC%E9%98%B2%E5%BE%A1%E4%B8%8E%E5%88%86%E6%9E%90">&#x75C5;&#x6BD2;&#x6728;&#x9A6C;&#x9632;&#x5FA1;&#x4E0E;&#x5206;&#x6790;</a>
+<li><a href="#qy">&#x4E00;.&#x524D;&#x8A00;</a></li>
+<li><a href="#er">&#x4E8C;.&#x5EFA;&#x7ACB;&#x5BF9;&#x624B;&#x52A8;&#x67E5;&#x6740;&#x75C5;&#x6BD2;&#x6280;&#x672F;&#x7684;&#x6B63;&#x786E;&#x8BA4;&#x8BC6;</a>
 <ul>
-<li><a href="#%E4%B8%80%E5%89%8D%E8%A8%80">&#x4E00;.&#x524D;&#x8A00;</a></li>
-<li><a href="#%E4%BA%8C%E5%BB%BA%E7%AB%8B%E5%AF%B9%E6%89%8B%E5%8A%A8%E6%9F%A5%E6%9D%80%E7%97%85%E6%AF%92%E6%8A%80%E6%9C%AF%E7%9A%84%E6%AD%A3%E7%A1%AE%E8%AE%A4%E8%AF%86">&#x4E8C;.&#x5EFA;&#x7ACB;&#x5BF9;&#x624B;&#x52A8;&#x67E5;&#x6740;&#x75C5;&#x6BD2;&#x6280;&#x672F;&#x7684;&#x6B63;&#x786E;&#x8BA4;&#x8BC6;</a>
-<ul>
-<li><a href="#1%E7%97%85%E6%AF%92%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95">1.&#x75C5;&#x6BD2;&#x5206;&#x6790;&#x65B9;&#x6CD5;</a></li>
-<li><a href="#2%E7%97%85%E6%AF%92%E6%9F%A5%E6%9D%80%E6%AD%A5%E9%AA%A4">2.&#x75C5;&#x6BD2;&#x67E5;&#x6740;&#x6B65;&#x9AA4;</a></li>
-<li><a href="#3%E5%BF%85%E5%A4%87%E7%9F%A5%E8%AF%86">3.&#x5FC5;&#x5907;&#x77E5;&#x8BC6;</a><br>
-* <a href="#1-%E7%86%9F%E6%82%89windows%E7%B3%BB%E7%BB%9F%E8%BF%9B%E7%A8%8B">1) &#x719F;&#x6089;windows&#x7CFB;&#x7EDF;&#x8FDB;&#x7A0B;</a><br>
-* <a href="#2-%E7%86%9F%E6%82%89%E5%B8%B8%E8%A7%81%E7%AB%AF%E5%8F%A3%E4%B8%8E%E8%BF%9B%E7%A8%8B%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB">2) &#x719F;&#x6089;&#x5E38;&#x89C1;&#x7AEF;&#x53E3;&#x4E0E;&#x8FDB;&#x7A0B;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;</a><br>
-* <a href="#3-%E7%86%9F%E6%82%89windows%E8%87%AA%E5%B8%A6%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1">3) &#x719F;&#x6089;windows&#x81EA;&#x5E26;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;</a><br>
-* <a href="#4-%E7%86%9F%E6%82%89%E6%B3%A8%E5%86%8C%E8%A1%A8%E5%90%AF%E5%8A%A8%E9%A1%B9%E4%BD%8D%E7%BD%AE">4) &#x719F;&#x6089;&#x6CE8;&#x518C;&#x8868;&#x542F;&#x52A8;&#x9879;&#x4F4D;&#x7F6E;</a></li>
+<li><a href="#er1">1.&#x75C5;&#x6BD2;&#x5206;&#x6790;&#x65B9;&#x6CD5;</a></li>
+<li><a href="#er2">2.&#x75C5;&#x6BD2;&#x67E5;&#x6740;&#x6B65;&#x9AA4;</a></li>
+<li><a href="#er3">3.&#x5FC5;&#x5907;&#x77E5;&#x8BC6;</a><br>
+* <a href="#er31">1) &#x719F;&#x6089;windows&#x7CFB;&#x7EDF;&#x8FDB;&#x7A0B;</a><br>
+* <a href="#er32">2) &#x719F;&#x6089;&#x5E38;&#x89C1;&#x7AEF;&#x53E3;&#x4E0E;&#x8FDB;&#x7A0B;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;</a><br>
+* <a href="#er33">3) &#x719F;&#x6089;windows&#x81EA;&#x5E26;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;</a><br>
+* <a href="#er34">4) &#x719F;&#x6089;&#x6CE8;&#x518C;&#x8868;&#x542F;&#x52A8;&#x9879;&#x4F4D;&#x7F6E;</a></li>
 </ul>
 </li>
-<li><a href="#%E4%B8%89%E8%AF%A6%E8%A7%A3windows%E9%9A%8F%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE%E6%B3%A8%E5%86%8C%E8%A1%A8">&#x4E09;.&#x8BE6;&#x89E3;Windows&#x968F;&#x673A;&#x542F;&#x52A8;&#x9879;&#x76EE;&#x2014;&#x2014;&#x6CE8;&#x518C;&#x8868;</a></li>
-<li><a href="#%E5%9B%9B%E8%AF%A6%E8%A7%A3windows%E9%9A%8F%E6%9C%BA%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1">&#x56DB;.&#x8BE6;&#x89E3;Windows&#x968F;&#x673A;&#x542F;&#x52A8;&#x9879;&#x76EE;&#x2014;&#x2014;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;</a></li>
-<li><a href="#%E4%BA%94%E6%89%8B%E5%8A%A8%E6%9F%A5%E6%9D%80%E7%97%85%E6%AF%92%E5%AE%9E%E6%88%98%E7%86%8A%E7%8C%AB%E7%83%A7%E9%A6%99%E7%97%85%E6%AF%92">&#x4E94;.&#x624B;&#x52A8;&#x67E5;&#x6740;&#x75C5;&#x6BD2;&#x5B9E;&#x6218;&#x2014;&#x2014;&#x718A;&#x732B;&#x70E7;&#x9999;&#x75C5;&#x6BD2;</a>
+<li><a href="#sa">&#x4E09;.&#x8BE6;&#x89E3;Windows&#x968F;&#x673A;&#x542F;&#x52A8;&#x9879;&#x76EE;&#x2014;&#x2014;&#x6CE8;&#x518C;&#x8868;</a></li>
+<li><a href="#si">&#x56DB;.&#x8BE6;&#x89E3;Windows&#x968F;&#x673A;&#x542F;&#x52A8;&#x9879;&#x76EE;&#x2014;&#x2014;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;</a></li>
+<li><a href="#wu">&#x4E94;.&#x624B;&#x52A8;&#x67E5;&#x6740;&#x75C5;&#x6BD2;&#x5B9E;&#x6218;&#x2014;&#x2014;&#x718A;&#x732B;&#x70E7;&#x9999;&#x75C5;&#x6BD2;</a>
 <ul>
-<li><a href="#0-%E7%97%85%E6%AF%92%E5%88%86%E6%9E%90">0. &#x75C5;&#x6BD2;&#x5206;&#x6790;</a><br>
-* <a href="#1%E4%B8%AD%E6%AF%92%E7%97%87%E7%8A%B6">1).&#x4E2D;&#x6BD2;&#x75C7;&#x72B6;</a><br>
-* <a href="#2%E7%97%85%E6%AF%92%E7%89%B9%E5%BE%81">2).&#x75C5;&#x6BD2;&#x7279;&#x5F81;</a><br>
-* <a href="#3%E5%8F%91%E4%BD%9C%E7%97%87%E7%8A%B6">3).&#x53D1;&#x4F5C;&#x75C7;&#x72B6;</a></li>
-<li><a href="#1-%E6%9F%A5%E5%86%85%E5%AD%98%E6%8E%92%E6%9F%A5%E5%8F%AF%E7%96%91%E8%BF%9B%E7%A8%8B%E5%B0%86%E7%97%85%E6%AF%92%E4%BB%8E%E5%86%85%E5%AD%98%E4%B8%AD%E5%B9%B2%E6%8E%89">1. &#x67E5;&#x5185;&#x5B58;&#xFF0C;&#x6392;&#x67E5;&#x53EF;&#x7591;&#x8FDB;&#x7A0B;&#xFF0C;&#x5C06;&#x75C5;&#x6BD2;&#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x5E72;&#x6389;</a></li>
-<li><a href="#2-%E6%9F%A5%E5%90%AF%E5%8A%A8%E9%A1%B9%E5%88%A0%E9%99%A4%E7%97%85%E6%AF%92%E5%90%AF%E5%8A%A8%E9%A1%B9">2. &#x67E5;&#x542F;&#x52A8;&#x9879;&#xFF0C;&#x5220;&#x9664;&#x75C5;&#x6BD2;&#x542F;&#x52A8;&#x9879;</a></li>
-<li><a href="#3-%E9%80%9A%E8%BF%87%E5%90%AF%E5%8A%A8%E9%A1%B9%E5%88%A4%E6%96%AD%E7%97%85%E6%AF%92%E6%89%80%E5%9C%A8%E4%BD%8D%E7%BD%AE%E5%B9%B6%E4%BB%8E%E6%A0%B9%E6%9C%AC%E4%B8%8A%E5%88%A0%E9%99%A4%E7%97%85%E6%AF%92">3. &#x901A;&#x8FC7;&#x542F;&#x52A8;&#x9879;&#x5224;&#x65AD;&#x75C5;&#x6BD2;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#xFF0C;&#x5E76;&#x4ECE;&#x6839;&#x672C;&#x4E0A;&#x5220;&#x9664;&#x75C5;&#x6BD2;</a></li>
-<li><a href="#4-%E4%BF%AE%E5%A4%8D%E7%B3%BB%E7%BB%9F">4. &#x4FEE;&#x590D;&#x7CFB;&#x7EDF;</a></li>
+<li><a href="#wu0">0. &#x75C5;&#x6BD2;&#x5206;&#x6790;</a><br>
+* <a href="#wu01">1).&#x4E2D;&#x6BD2;&#x75C7;&#x72B6;</a><br>
+* <a href="#wu02">2).&#x75C5;&#x6BD2;&#x7279;&#x5F81;</a><br>
+* <a href="#wu03">3).&#x53D1;&#x4F5C;&#x75C7;&#x72B6;</a></li>
+<li><a href="#wu1">1. &#x67E5;&#x5185;&#x5B58;&#xFF0C;&#x6392;&#x67E5;&#x53EF;&#x7591;&#x8FDB;&#x7A0B;&#xFF0C;&#x5C06;&#x75C5;&#x6BD2;&#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x5E72;&#x6389;</a></li>
+<li><a href="#wu2">2. &#x67E5;&#x542F;&#x52A8;&#x9879;&#xFF0C;&#x5220;&#x9664;&#x75C5;&#x6BD2;&#x542F;&#x52A8;&#x9879;</a></li>
+<li><a href="#wu3">3. &#x901A;&#x8FC7;&#x542F;&#x52A8;&#x9879;&#x5224;&#x65AD;&#x75C5;&#x6BD2;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#xFF0C;&#x5E76;&#x4ECE;&#x6839;&#x672C;&#x4E0A;&#x5220;&#x9664;&#x75C5;&#x6BD2;</a></li>
+<li><a href="#wu4">4. &#x4FEE;&#x590D;&#x7CFB;&#x7EDF;</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 
-## 一.前言
+## <span id="qy">一.前言</span>
 
 《病毒木马防御与分析》系列以真实的病毒木马（或恶意程序）为研究对象，通过现有的技术手段对其分析，总结出它的恶意行为，进而制定出相应的应对方法，对其彻底查杀。当然，因为我个人水平的有限，查杀分析的病毒可能不是过于高端复杂，但对你认识病毒工作原理还是会很有帮助的，甚至最后你也可以利用c语言实现一个简单的病毒程序。
 
-## 二.建立对手动查杀病毒技术的正确认识
+## <span id="er">二.建立对手动查杀病毒技术的正确认识</span>
 
-### 1.病毒分析方法
+### <span id="er1">1.病毒分析方法</span>
 
 一般来说，除非是感染型病毒，否则是不需要对病毒进行逆向分析的，只需要对病毒进行行为分析就可以编写专杀工具。而如果是感染型病毒，由于需要修复被病毒感染的文件，那么就不能仅仅简单地分析病毒的行为，而必须对病毒进行逆向分析，从而修复被病毒所感染的文件。因此，实际中的分析方法有以下两种：
 
@@ -47,7 +50,7 @@
 
 2. 逆向分析。当恶意程序感染了可执行文件之后，所感染的内容是无法通过行为监控工具发现的。而病毒对可执行文件的感染，有可能是通过PE文件结构中的节与节之间的缝隙来存放病毒代码，也可能是添加一个新节来存放病毒代码。无论是哪种方式，都需要通过逆向的手段进行分析。
 
-### 2.病毒查杀步骤
+### <span id="er2">2.病毒查杀步骤</span>
 
 1. 查内存，排查可疑进程，将病毒从内存中干掉
 
@@ -57,19 +60,19 @@
 
 4. 修复系统
 
-### 3.必备知识
+### <span id="er3">3.必备知识</span>
 
-##### 1) 熟悉windows系统进程
+##### <span id="er31">1) 熟悉windows系统进程</span>
 
-##### 2) 熟悉常见端口与进程对应关系
+##### <span id="er32">2) 熟悉常见端口与进程对应关系</span>
 
-##### 3) 熟悉windows自带系统服务
+##### <span id="er33">3) 熟悉windows自带系统服务</span>
 
 * 系统随机启劢服务查看：msconfig/services.msc
 * SvcHost.exe宿主进程对应的多项服务
 * windows隐藏服务管理工具：SDCT
 
-##### 4) 熟悉注册表启动项位置
+##### <span id="er34">4) 熟悉注册表启动项位置</span>
 
 > 随机启动项目在注册表中的位置
 * HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
@@ -80,7 +83,7 @@
 
 * HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options
 
-## 三.详解Windows随机启动项目——注册表
+## <span id="sa">三.详解Windows随机启动项目——注册表</span>
 
 注册表是Windows中的一个重要的数据库，用于存储系统和应用程序的设置信息。早在很多年前的Windows系统中注册表就已经出现。随后推出的Windows NT是第一个从系统级别广泛使用注册表的操作系统。但是，从Microsoft Windows 95操作系统开始，注册表才真正成为Windows用户经常接触的内容，并在其后的操作系统中继续沿用至今。
 
@@ -125,7 +128,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx
 
 ![img1](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/1.jpg)
 
-## 四.详解Windows随机启动项目——系统服务
+## <span id="si">四.详解Windows随机启动项目——系统服务</span>
 
 一个病毒往往会以系统服务的形式存在，也就是说他的图标不会出现在你的桌面任务栏，不会像在我们初学编程时程序运行时的一个小黑框展现给用户。
 
@@ -165,16 +168,16 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx
 
 <font color="red">可以看到svchost.exe会存在多个进程，而每个进程下还有多个依赖于此进程的服务。</font>
 
-## 五.手动查杀病毒实战——熊猫烧香病毒
+## <span id="wu">五.手动查杀病毒实战——熊猫烧香病毒</span>
 
 > 如果像自己实践记得在虚拟机下！
 > 病毒包可以在Github仓库找到
 
-### 0. 病毒分析
+### <span id="wu0">0. 病毒分析</span>
 
 病毒名称: `武汉男生`，又名`熊猫烧香病毒`。"Worm.WhBoy.h"
 
-###### 1).中毒症状
+###### <span id="wu01">1).中毒症状</span>
   
 * 拷贝自身到所有驱动器根目录，命名为Setup.exe，并生成一个autorun.inf使得用户打开该盘运行病毒，并将这两个文件属性设置为隐藏、只读、系统。
 
@@ -200,7 +203,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx
 
 * 禁用常见杀毒工具。
 
-###### 2).病毒特征
+###### <span id="wu02">2).病毒特征</span>
 
 * 关闭众多杀毒软件和安全工具。
 
@@ -212,7 +215,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx
 
 * 自动删除*.gho文件。
 
-###### 3).发作症状
+###### <span id="wu03">3).发作症状</span>
 
 1. 拷贝文件
 
@@ -296,7 +299,7 @@ Movie Maker
 MSN Gamin Zone
 ```
 
-### 1. 查内存，排查可疑进程，将病毒从内存中干掉
+### <span id="wu1">1. 查内存，排查可疑进程，将病毒从内存中干掉</span>
 
 在虚拟机中运行熊猫烧香病毒，记得要在xp虚拟机啊，物理机现在Windows补丁已经免疫熊猫烧香了。
 
@@ -318,7 +321,7 @@ MSN Gamin Zone
 
 ![8](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/8.png)
 
-### 2. 查启动项，删除病毒启动项
+### <span id="wu2">2. 查启动项，删除病毒启动项</span>
 
 将病毒从内存中清除之后，接下来我们要删除其服务和启动项。
 
@@ -326,7 +329,7 @@ MSN Gamin Zone
 
 在禁用删除掉启动项之前，我们需要先记住这个病毒的路径，以便第三步去删除它的主体。
 
-### 3. 通过启动项判断病毒所在位置，并从根本上删除病毒
+### <span id="wu3">3. 通过启动项判断病毒所在位置，并从根本上删除病毒</span>
 
 下图就是熊猫烧香病毒本体的位置了，其实但看启动项中exe路径就能发现spoclsv服务的可疑了，它位于system32\drivers下，也不是一些常见的系统服务。
 
@@ -334,7 +337,7 @@ MSN Gamin Zone
 
 到这个路径下删除这个exe程序。
 
-### 4. 修复系统
+### <span id="wu4">4. 修复系统</span>
 
 删除完exe之后我们重启系统，会发现现在系统中没有spoclsv.exe这个进程了。
 
