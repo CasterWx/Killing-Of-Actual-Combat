@@ -123,7 +123,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce;
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx
 ```
 
-![img1](img/1.jpg)
+![img1](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/1.jpg)
 
 ## 四.详解Windows随机启动项目——系统服务
 
@@ -133,9 +133,9 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx
 
 在`运行`中输入`msconfig`打开系统配置
 
-![2](img/2.png)
+![2](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/2.png)
 
-![3](img/3.png)
+![3](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/3.png)
 
 在这里我们可以看到有`服务`和`启动`，`启动`中即是之前我们所说在注册表中的开机自启动项了，不过很多病毒都有在系统配置启动中隐藏自己的功能，所以我们还是要会在注册表中查找。
 
@@ -145,15 +145,15 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx
 
 在`运行`中输入`services.msc`打开服务。
 
-![4](img/4.png)
+![4](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/4.png)
 
 在这里我们可以看到大量的系统服务，比如有WLAN服务(连不上WIFI可以考虑重新启动这个服务)，Windows更新服务(可以考虑禁用)。通过查看描述，我们就可以发现一些异常的服务了，比如灰鸽子远控，在其服务描述中很明显的写出了是灰鸽子。
 
-![5](img/5.png)
+![5](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/5.png)
 
 在Windows下病毒也可以对自身服务进行隐藏，这类病毒就需要一些第三方工具了，利用SDCT工具可以查看到本机所有服务的信息，包括隐藏与未隐藏，启动与未启动。
 
-![5](img/7.png)
+![5](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/7.png)
 
 > SDCT工具还有之后的工具都可以在我的Github仓库中找到
 
@@ -161,7 +161,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx
 
 命令: `tasklist /svc`
 
-![6](img/6.png)
+![6](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/6.png)
 
 <font color="red">可以看到svchost.exe会存在多个进程，而每个进程下还有多个依赖于此进程的服务。</font>
 
@@ -300,11 +300,11 @@ MSN Gamin Zone
 
 在虚拟机中运行熊猫烧香病毒，记得要在xp虚拟机啊，物理机现在Windows补丁已经免疫熊猫烧香了。
 
-![9](img/9.png)
+![9](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/9.png)
 
 在虚拟机中我们打开任务管理器，发现刚一打开就会被关闭，这是熊猫烧香的特征之一。
 
-![10](img/10.png)
+![10](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/10.png)
 
 右键一个分区，你会发现第一项不是打开，而是`Auto`，这是因为熊猫烧香病毒会在分区产生一个`autorun.inf`文件使得用户打开该盘运行病毒，`autorun.inf`文件是系统,隐藏文件。
 
@@ -316,13 +316,13 @@ MSN Gamin Zone
 
 > 有些病毒无论任务管理器还是taskkill命令都无法将其终止，这类病毒大多是有三个进程相互保护，有一个被终止后其他进程会立即再次启动这个进程。
 
-![8](img/8.png)
+![8](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/8.png)
 
 ### 2. 查启动项，删除病毒启动项
 
 将病毒从内存中清除之后，接下来我们要删除其服务和启动项。
 
-![12](img/12.png)
+![12](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/12.png)
 
 在禁用删除掉启动项之前，我们需要先记住这个病毒的路径，以便第三步去删除它的主体。
 
@@ -330,7 +330,7 @@ MSN Gamin Zone
 
 下图就是熊猫烧香病毒本体的位置了，其实但看启动项中exe路径就能发现spoclsv服务的可疑了，它位于system32\drivers下，也不是一些常见的系统服务。
 
-![13](img/13.png)
+![13](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/13.png)
 
 到这个路径下删除这个exe程序。
 
@@ -342,18 +342,18 @@ MSN Gamin Zone
 
 我们需要将Auto选项删除，并且清理系统。
 
-![14](img/14.png)
+![14](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/14.png)
 
 `autorun.inf`就是关联我们右键菜单的文件了。
 
 我们通过`attrib -s -h -a -r autorun.inf`来分别将`autorun.inf`和`setup.exe`隐藏属性删除并且删除这两个文件。
 
-![15](img/15.png)
+![15](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/15.png)
 
 删除之后我们双击分区打开会发现无法生效。
 
-![16](img/16.png)
+![16](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/16.png)
 
 注销系统后，右键菜单恢复。
 
-![17](img/17.png)
+![17](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/17.png)
