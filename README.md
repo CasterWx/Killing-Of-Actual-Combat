@@ -348,11 +348,11 @@ MSN Gamin Zone
 
 我们通过`attrib -s -h -a -r autorun.inf`来分别将`autorun.inf`和`setup.exe`隐藏属性删除并且删除这两个文件。
 
-![14](img/14.png)
+![15](img/15.png)
 
 删除之后我们双击分区打开会发现无法生效。
 
-![14](img/14.png)
+![16](img/16.png)
 
 注销系统后，右键菜单恢复。
 
