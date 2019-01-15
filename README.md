@@ -2,7 +2,7 @@
 
 ### [病毒包和工具包下载:Github](https://github.com/CasterWx/Killing-Of-Actual-Combat)
 
-| [总纲](https://github.com/CasterWx/Killing-Of-Actual-Combat/README.md) | [熊猫烧香](https://github.com/CasterWx/Killing-Of-Actual-Combat/XMSX.md) |
+| [总纲](https://github.com/CasterWx/Killing-Of-Actual-Combat/blob/master/README.md) | [熊猫烧香](https://github.com/CasterWx/Killing-Of-Actual-Combat/blob/master/XMSX.md) |
 | --------- | --------- |
 
 <ul>
