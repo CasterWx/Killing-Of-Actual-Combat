@@ -3,21 +3,21 @@
 > 如果像自己实践记得在虚拟机下！
 > 病毒包可以在Github仓库找到
 
+### 目录
 
-<li><a href="#wu">&#x624B;&#x52A8;&#x67E5;&#x6740;&#x75C5;&#x6BD2;&#x5B9E;&#x6218;&#x2014;&#x2014;&#x718A;&#x732B;&#x70E7;&#x9999;&#x75C5;&#x6BD2;</a>
-<ul>
-<li><a href="#wu0">0. &#x75C5;&#x6BD2;&#x5206;&#x6790;</a><br>
-* <a href="#wu01">1).&#x4E2D;&#x6BD2;&#x75C7;&#x72B6;</a><br>
-* <a href="#wu02">2).&#x75C5;&#x6BD2;&#x7279;&#x5F81;</a><br>
-* <a href="#wu03">3).&#x53D1;&#x4F5C;&#x75C7;&#x72B6;</a></li>
-<li><a href="#wu1">1. &#x67E5;&#x5185;&#x5B58;&#xFF0C;&#x6392;&#x67E5;&#x53EF;&#x7591;&#x8FDB;&#x7A0B;&#xFF0C;&#x5C06;&#x75C5;&#x6BD2;&#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x5E72;&#x6389;</a></li>
-<li><a href="#wu2">2. &#x67E5;&#x542F;&#x52A8;&#x9879;&#xFF0C;&#x5220;&#x9664;&#x75C5;&#x6BD2;&#x542F;&#x52A8;&#x9879;</a></li>
-<li><a href="#wu3">3. &#x901A;&#x8FC7;&#x542F;&#x52A8;&#x9879;&#x5224;&#x65AD;&#x75C5;&#x6BD2;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#xFF0C;&#x5E76;&#x4ECE;&#x6839;&#x672C;&#x4E0A;&#x5220;&#x9664;&#x75C5;&#x6BD2;</a></li>
-<li><a href="#wu4">4. &#x4FEE;&#x590D;&#x7CFB;&#x7EDF;</a></li>
-</ul>
-</li>
-</ul>
-</li>
+* [一.手动查杀](#step1)
+  * [0.病毒分析](#wu0)
+    * [1).中毒症状](#wu01)
+    * [2).病毒特征](#wu02)
+    * [3).发作症状](#wu03)
+  * [1. 查内存，排查可疑进程，将病毒从内存中干掉](#wu1)
+  * [2. 查启动项，删除病毒启 动项](#wu2)
+  * [3. 通过启动项判断病毒所在位置，并从根本上删除病毒](#wu3)
+  * [4. 修复系统](#wu4)
+* [二.行为分析](#step2)
+* [三.逆向分析](#step3)
+
+## <span id="step1">一.手动查杀</span>
 
 ### <span id="wu0">0. 病毒分析</span>
 
@@ -206,3 +206,81 @@ MSN Gamin Zone
 注销系统后，右键菜单恢复。
 
 ![17](https://github.com/CasterWx/Killing-Of-Actual-Combat/raw/master/img/17.png)
+
+
+## <span id="step2">二.行为分析</span>
+
+> 使用Process Monitor进程树分析病毒运行后的操作。
+
+在病毒程序启动之前，任务管理器还可以打开。
+
+![step1](img/step2.png)
+
+设置Process Monitor进程过滤，进程名选择`熊猫烧香.exe`。
+
+![step3](img/step3.png)
+
+过滤结果中可以看到运行的`setup.exe`程序，后面跟随有进程操作，其中操作多为`进程创建`和大量的`注册表操作`。
+
+打开进程树查看`setup.exe`进程信息。
+
+![step4](img/step4.png)
+
+在进程树中可以发现，`setup.exe`衍生出了`spoclsv.exe`。衍生出的进程又打开了两次`cmd.exe`。第一次运行的命令是`cmd.exe /c net share C$ /del /y`，它的意思是在命令行模式下删除C盘的网络共享，执行完后关闭cmd.exe。因此这个病毒应该是会关闭系统中所有的盘的网络共享。第二次运行的命令是`cmd.exe /c net share admin$ /del /y`，这里取消的是系统根目录的共享。那么由此就可以总结出病毒的两点行为：
+
+* 行为1：病毒本身创建了名为`spoclsv.exe`的进程，该进程文件的路径为`C:\WINDOWS\system32\drivers\spoclsv.exe`。
+
+* 行为2：在命令行模式下使用`net share`命令来取消系统中的共享。
+
+之后对`setup.exe`文件操作监控分析，分析操作为`CreateFile`的`Path`，
+
+![step5](img/step5.png)
+
+可见，`熊猫烧香.exe`在`C:\WINDOWS\system32\drivers`中创建了`spoclsv.exe`，其它再无可疑操作，那么可以认为，这个病毒真正的破坏部分是由`spoclsv.exe`实现的，那么接下来的工作就是专门监控这个进程。
+
+这里需要将进程名为`spoclsv.exe`的进程加入筛选器进行分析。`spoclsv.exe`作为病毒主体所产生的操作会比较多。
+
+![step6](img/step6.png)
+
+可见病毒进程会尝试删除大量安全类软件的注册表启动项。
+
+* 行为3：删除安全类软件在注册表中的启动项。
+
+然后只保留`RegCreateKey`与`RegSetValue`进行分析：
+
+![step7](img/step7.png)
+
+可见，病毒程序为自身创建了自启动项，详细信息为`Type: REG_SZ, 长度: 80, 数据: C:\WINDOWS\system32\drivers\spoclsv.exe`，使得每次启动计算机就会执行自身，可以查看该路径启动项来验证，因为病毒进程会自动关闭任务管理器和注册表，所以我们需要借助第三方工具`autorun`来查看。
+
+![step8](img/step8.png)
+
+* 行为4：在注册表`HKCU\Software\Microsoft\Windows\CurrentVersion\Run`中创建`svcshare`，用于在开机时启动位于`C:\WINDOWS\system32\drivers\spoclsv.exe`的病毒程序。
+
+接下来还有：
+
+![step9](img/step9.png)
+
+对注册表`KLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Folder\Hidden\SHOWALL\CheckedValue`这个位置设置为`0`，能够实现文件的隐藏。此处进行设置后，即便在`文件夹选项`中选择`显示所有文件和文件夹`，也无法显示隐藏文件，则有：
+
+* 行为5：修改注册表，使得隐藏文件无法通过普通的设置进行显示，该位置为：`HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Folder\Hidden\SHOWALL`，病毒将`CheckedValue`的键值设置为了`0`。
+
+接下来对`spoclsv.exe`文件监控分析，主要看的是病毒是否将自己复制到其他目录，或者创建删除了哪些文件等，监控如下所示：
+
+![step10](img/step10.png)
+
+在图中可以看到，病毒文件在`C:\WINDOWS\system32\drivers`中创建了`spoclsv.exe`这个文件，在C盘和E盘根目录下创建了`setup.exe`与`autorun.inf`，并且在一些目录中创建了`Desktop_.ini`这个文件。由于创建这些文件之后就对注册表的SHOWALL项进行了设置，使得隐藏文件无法显示，那么有理由相信，所创建出来的这些文件的属性都是“隐藏”的，于是有：
+
+* 行为6：将自身拷贝到根目录，并命名为`setup.exe`，同时创建`autorun.inf`用于病毒的启动，这两个文件的属性都是`隐藏`。
+
+* 行为7：在一些目录中创建名为`Desktop_.ini`的隐藏文件。
+
+最后对`spoclsv.exe`进行网络监控分析，来查看病毒是否有联网动作。
+
+![step11](img/step11.png)
+
+从监控结果可以看到，病毒不断尝试连接`192.168.1.X`即局域网中的其它计算机。
+
+* 行为8：向外发包，连接局域网中其他机器。
+
+## <span id="step3">三.逆向分析</span>
+
