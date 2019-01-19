@@ -18,8 +18,8 @@
 
 ## 实战
 
-| [总纲](https://github.com/CasterWx/Killing-Of-Actual-Combat/blob/master/README.md) | [熊猫烧香分析](https://github.com/CasterWx/Killing-Of-Actual-Combat/blob/master/XMSX.md) |
-| --------- | --------- |
+| [总纲](https://github.com/CasterWx/Killing-Of-Actual-Combat/blob/master/README.md) | [熊猫烧香分析](https://github.com/CasterWx/Killing-Of-Actual-Combat/blob/master/XMSX.md) | [txt病毒分析](https://github.com/CasterWx/Killing-Of-Actual-Combat/blob/master/TXT.md) |
+| --------- | --------- | --------- |
 
 
 ## <span id="qy">一.前言</span>
