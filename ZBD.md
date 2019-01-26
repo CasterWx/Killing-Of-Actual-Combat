@@ -41,28 +41,6 @@
 
     SPI_GETLOWPOWERTIMEOUT：检索用于屏幕保护的低电压状态超时值。pvParam参数必须指向一个整型变量，以接收该值。对于Windows 98该标志支持16位和32位应用程序。对于Windows95，该标志只支持16位应用程序。对于Windows NT,该标志支持Windows NT 5.0及以后版本上的32位应用程序。不支持16位应用程序。
 
-    SPI_GETMENUDROPALIGNMENT。确定弹出式菜单相对于相应的菜单条项是左对齐，还是右对齐、参数pvParam必须指向一个BOOL类型变量，如果是左对齐。那么该变量值为TRUE，否则为FALSE。SPI_GETMINIMIZEDMETRICS：检索最小化窗口有关的度量数据信息。参数pvParam必须指向MINIMIZEDMETRCS结构，以接收信息。该结构中的cbSize和ulParam参数的值应设为sizeof（MINIMIZEDMETRICS）。
-
-    SPI_GETMOUSE：检索鼠标的2个阈值和加速特性。pvParam参数必须指向一个长度为3的整型数组，分别存储此值。
-
-    SPI_GETMOUSEHOVERHEGHT：用于Windows NT 4.0及以后版本或Windows 98。获得在TrackMouseEvent事件中，为产生WM_MOUSEOVER消息而鼠标指针必须停留的矩形框的高度,以像素为单位。参数pvParam必须指向一个UINT变量以接收这个高度值。
-
-    SPI_GETMOUSEHOVERTIME：用于Windows NT 4.0及以后版本、Windows 98，获得在TrackMouseEvent事件中，为产生WM_MOUSEOVER消息而鼠标指针必须停留在矩形框内的时间，单位为毫秒。参数pvParam必须指向一个UINT变量以接收该时间值。
-
-    SPI_GETMOUSEHOVERWIDTH：用于Windows NT 4.0及以后版本、Windows 98。获得在TrackMouseEvent事件中，为产生WM_MOUSEOVER消息而鼠标指针必须停留的矩形框的宽度,以像素为单位。参数pvParam必须指向一个UINT变量以接收这个宽度值。
-
-    SPI_GETMOUSEKEYS：检索与MOUSEKEYS易用特征有关的信息，pvParam参数必须指向某个MOUSEKEYS结构，以获取信息。应将结构的cbSize成员和ulParam参数设置为sizeof（MOUSEKEYS）。
-
-    SPI_GETMOUSESPEED：用于Windows NT 5.0及以后版本、Windows 98。检索当前鼠标速度。鼠标速度决定了鼠标移动多少距离，鼠标的指针将移动多远。参数pvParam指向一个整型变量，该变量接收1（最慢）至20（最快）之间的数值。缺省值为们10。这个值可以由最终用户使用鼠标控制面板应用程序或使用调用了SPI_SETMOUSESPEED的应用程序来设置。
-
-    SPI_GETMOUSETRAILS：用于WpvParam必须指向一个BOOL类型变量，如果是左对齐。那么该变量值为TRUE，否则为FALSE。
-
-    SPI_GETMINIMIZEDMETRICS：检索最小化窗口有关的度量数据信息。参数pvParam必须指向MINIMIZEDMETRCS结构，以接收信息。该结构中的cbSize和ulParam参数的值应设为sizeof（MINIMIZEDMETRICS）。
-
-    SPI_GETMOUSE：检索鼠标的2个阈值和加速特性。pvParam参数必须指向一个长度为3的整型数组，分别存储此值。
-
-    SPI_GETMOUSEHOVERHEGHT：用于Windows NT 4.0及以后版本或Windows 98。获得在TrackMouseEvent事件中，为产生WM_MOUSEOVER消息而鼠标指针必须停留的矩形框的高度,以像素为单位。参数pvParam必须指向一个UINT变量以接收这个高度值。
-
     SPI_GETMOUSEHOVERTIME：用于Windows NT 4.0及以后版本、Windows 98，获得在TrackMouseEvent事件中，为产生WM_MOUSEOVER消息而鼠标指针必须停留在矩形框内的时间，单位为毫秒。参数pvParam必须指向一个UINT变量以接收该时间值。
 
     SPI_GETMOUSEHOVERWIDTH：用于Windows NT 4.0及以后版本、Windows 98。获得在TrackMouseEvent事件中，为产生WM_MOUSEOVER消息而鼠标指针必须停留的矩形框的宽度,以像素为单位。参数pvParam必须指向一个UINT变量以接收这个宽度值。
