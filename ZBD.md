@@ -43,8 +43,6 @@
 
     SPI_GETMOUSEHOVERTIME：用于Windows NT 4.0及以后版本、Windows 98，获得在TrackMouseEvent事件中，为产生WM_MOUSEOVER消息而鼠标指针必须停留在矩形框内的时间，单位为毫秒。参数pvParam必须指向一个UINT变量以接收该时间值。
 
-    SPI_GETMOUSEHOVERWIDTH：用于Windows NT 4.0及以后版本、Windows 98。获得在TrackMouseEvent事件中，为产生WM_MOUSEOVER消息而鼠标指针必须停留的矩形框的宽度,以像素为单位。参数pvParam必须指向一个UINT变量以接收这个宽度值。
-
     SPI_GETMOUSEKEYS：检索与MOUSEKEYS易用特征有关的信息，pvParam参数必须指向某个MOUSEKEYS结构，以获取信息。应将结构的cbSize成员和ulParam参数设置为sizeof（MOUSEKEYS）。SPI_GETMOUSESPEED：用于Windows NT 5.0及以后版本、Windows 98。检索当前鼠标速度。鼠标速度决定了鼠标移动多少距离，鼠标的指针将移动多远。参数pvParam指向一个整型变量，该变量接收1（最慢）至20（最快）之间的数值。缺省值为们10。这个值可以由最终用户使用鼠标控制面板应用程序或使用调用了SPI_SETMOUSESPEED的应用程序来设置。
 
     SPI_GETMOUSETRAILS：用于Windows 95及更高版本。它用来表示是否允许MouseTrails（鼠标轨迹）。该特征通过简单地显示鼠标轨迹并迅速擦除它们来改善鼠标的可见性。参数prParam必须指向一个整型变量来接收该值。如果这个值为0或1，那么表示禁止该特征。如果该值大于1，则说明该特征被允许，并且该值表示在鼠标轨迹上画出的光标数目。参数ulParam不用。
